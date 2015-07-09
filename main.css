@@ -52,4 +52,9 @@ body {
     position: absolute;
 		bottom: 0px;
     z-index: 2;
+		opacity: 0;
+}
+
+p {
+opacity: 0;
 }
