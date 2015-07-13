@@ -1,60 +1,86 @@
 body {
-	margin: 0;
-	padding: 40px;
-	background: #EFEFEF;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 12px;
+margin: 0;
+padding: 40px;
+background: #EFEFEF;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 12px;
 }
 
 #portfolio {
-	margin: 0;
+margin: 0;
 }
 
 #portfolio .portfolio-item {
-	display: block;
-	float: left;
-	width: 200px;
-	height: 200px;
-	-webkit-perspective: 600px;
-	margin: 10px;
+display: block;
+float: left;
+width: 200px;
+height: 200px;
+-webkit-perspective: 600px;
+margin: 10px;
 }
 
 #portfolio .portfolio-item .primary,
 #portfolio .portfolio-item .secondary {
-	display: block;
-	width: 200px;
-	height: 200px;
-	background: #CCC;
-	-webkit-transform-style: preserve-3d;
-	-webkit-backface-visibility: hidden;
-	border-radius: 10px;
-	overflow: hidden;
+display: block;
+width: 200px;
+height: 200px;
+background: #CCC;
+-webkit-transform-style: preserve-3d;
+-webkit-backface-visibility: hidden;
+border-radius: 10px;
+overflow: hidden;
 }
 
 #portfolio .portfolio-item .secondary {
-	padding: 20px;
-	width: 160px;
-	height: 160px;
+padding: 20px;
+width: 160px;
+height: 160px;
 }
 
 #portfolio .portfolio-item .secondary h2 {
-	margin-top: 0px;
+margin-top: 0px;
 }
-    position: absolute;
-    z-index: 1;
-  }
 
 .primary {
   position: absolute;
-  z-index: 1;
-}
-  .secondary {
-    position: absolute;
-		bottom: 0px;
-    z-index: 2;
-		opacity: 0;
+  bottom: 0px;
+  z-index: 2;
+  opacity: 0;
+	display: none;
 }
 
-p {
-opacity: 0;
+.secondary {
+position: absolute;
+z-index: 1;
+display: none;
+}
+
+.primary:hover {
+  opacity: 1;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+.portfolio-item {
+  position: relative;
+}
+
+.primary {
+  position: absolute;
+  transition-duration: 2s;
+}
+
+.secondary {
+  transform: rotateY(180deg);
+  transition-duration: 2s;
+}
+
+.portfolio-item: hover .primary {
+  transform: rotateY(180deg);
+}
+
+.portfolio-item:hover .secondary {
+  transform: rotateY(0deg);
 }
